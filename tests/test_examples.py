@@ -13,6 +13,7 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 EXAMPLES_DIR = os.path.join(ROOT_DIR, "examples")
 PYPROJECT_PATH = os.path.join(ROOT_DIR, "pyproject.toml")
 LICENSE_PATH = os.path.join(ROOT_DIR, "LICENSE")
+GITIGNORE_PATH = os.path.join(ROOT_DIR, ".gitignore")
 
 
 class ExampleWorkflowTests(unittest.TestCase):
@@ -94,6 +95,18 @@ class ExampleWorkflowTests(unittest.TestCase):
         comfy = metadata["tool"]["comfy"]
         self.assertEqual(comfy["PublisherId"], "lhyliu")
         self.assertEqual(comfy["DisplayName"], "ComfyUI LLM API")
+
+    def test_local_secret_files_are_ignored(self):
+        with open(GITIGNORE_PATH, "r", encoding="utf-8") as handle:
+            ignored_patterns = set(
+                line.strip()
+                for line in handle
+                if line.strip() and not line.lstrip().startswith("#")
+            )
+
+        for pattern in (".env", ".env.*", "*.key", "*.pem", "secrets.*"):
+            with self.subTest(pattern=pattern):
+                self.assertIn(pattern, ignored_patterns)
 
 
 if __name__ == "__main__":
