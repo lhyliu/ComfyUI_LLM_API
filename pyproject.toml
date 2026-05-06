@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ComfyUI_LLM_API"
+version = "0.1.0"
+description = "OpenAI-compatible Chat Completions node for ComfyUI with text and image input support."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+    "openai>=1.0.0",
+    "Pillow",
+    "numpy",
+]
+classifiers = [
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = [
+    "comfy-cli",
+    "pytest",
+]
+
+[project.urls]
+Repository = "https://github.com/lhyliu/ComfyUI_LLM_API"
+"Bug Tracker" = "https://github.com/lhyliu/ComfyUI_LLM_API/issues"
+
+[tool.comfy]
+PublisherId = "lhyliu"
+DisplayName = "ComfyUI LLM API"

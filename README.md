@@ -112,9 +112,15 @@ MB values are decimal. Start with `balanced` for most workflows.
 - `examples/text_only_workflow.json`
 - `examples/image_chat_workflow.json`
 
-示例使用 `api_key_env` 占位，不包含 API key。
+示例使用 `api_key_env` 占位，不包含 API key。图片示例包含 `examples/example.png` 作为可直接加载的占位图。
 
-Examples use `api_key_env` placeholders and contain no API keys.
+Examples use `api_key_env` placeholders and contain no API keys. The image example includes `examples/example.png` as a loadable placeholder image.
+
+## 发布 / Release
+
+Registry metadata lives in `pyproject.toml`, including `[project]` and `[tool.comfy]`. Before publishing, confirm `PublisherId`, `Repository`, `version`, and `LICENSE` match your target release account and repository.
+
+Registry 发布元数据位于 `pyproject.toml`，包含 `[project]` 与 `[tool.comfy]`。发布前请确认 `PublisherId`、`Repository`、`version` 与 `LICENSE` 符合目标发布账号和仓库。
 
 ## 手动测试 / Manual Smoke Test
 
