@@ -1,0 +1,54 @@
+{
+  "last_node_id": 1,
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LLM_API_CHAT_NODE",
+      "pos": [320, 240],
+      "size": [420, 360],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 0
+        },
+        {
+          "name": "error",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM_API_CHAT_NODE"
+      },
+      "widgets_values": [
+        "openai",
+        "",
+        "",
+        "OPENAI_API_KEY",
+        "gpt-4.1-mini",
+        "You are a helpful assistant.",
+        "Write a short caption for a ComfyUI workflow.",
+        0.6,
+        100,
+        true,
+        4,
+        "balanced",
+        1.5,
+        1280
+      ]
+    }
+  ],
+  "links": [],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
